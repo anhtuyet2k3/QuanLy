@@ -13,6 +13,7 @@
         .container {
             display: flex;
             height: 100vh;
+            overflow: hidden;
         }
 
         .sidebar {
@@ -20,6 +21,7 @@
             color: #fff;
             width: 200px;
             padding: 20px;
+            
         }
 
         .sidebar h1 {
@@ -48,6 +50,7 @@
             flex-grow: 1;
             padding: 15px;
             background-color: #9EA5AB;
+            overflow-x: auto;
         }
 
         .content h1 {
@@ -156,7 +159,6 @@
             font-size: 16px;
             color: black;
             background-color: #ddd;
-            border: 1px solid #ccc;
             border-radius: 25px;
             text-decoration: none;
             text-align: center;
@@ -181,9 +183,9 @@
         .notification {
             display: none;
             align-items: center;
-            background-color: #e6ffe6;
-            color: #4CAF50;
-            border: 1px solid #4CAF50;
+            background-color: #E0FFE2;
+            color: #0B8E00;
+            border: 1px solid #0B8E00;
             padding: 10px;
             border-radius: 5px;
             max-width: 300px;
@@ -346,13 +348,13 @@
                 </div>
                 <div class="container1">
 
-                    <div class="search-box" style="margin-top: 30px; margin-left: 20px;">
+                    <div class="search-box" style="margin-top: 30px; margin-left: 20px; margin-right:55%">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="bi bi-search search-icon" viewBox="0 0 16 16">
                             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
                         </svg>
                         <input type="text" id="search" placeholder="Nhập thông tin nhân viên cần tìm">
                     </div>
-                    <a href="{{ route('employees.create') }}" class="btn" style="margin-top: 30px; margin-left:54%;border: 1px solid #888888">+ Thêm</a>
+                    <a href="{{ route('employees.create') }}" class="btn" style="margin-top: 30px;width:50px; background: #297ABF; color:#FFFFFF">Thêm</a>
                 </div>
                 <div class="table-container" style="margin-top:15px">
                     <table>
@@ -375,18 +377,18 @@
                                 <td>{{ $employee->soDienThoai }}</td>
                                 <td>{{ $employee->email }}</td>
                                 <td class="icon-links">
-                                    <a href="{{ route('employees.show', $employee->id) }}"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#currentcolor" class="bi bi-eye" viewBox="0 0 16 16">
+                                    <a href="{{ route('employees.show', $employee->id) }}"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#0160B1" class="bi bi-eye" viewBox="0 0 16 16">
                                             <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z" />
                                             <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0" />
                                         </svg>
                                     </a>
-                                    <a href="{{ route('employees.edit', $employee->id) }}"><svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="#currentcolor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                    <a href="{{ route('employees.edit', $employee->id) }}"><svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="#0160B1" class="bi bi-pencil-square" viewBox="0 0 16 16">
                                             <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
                                             <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
                                         </svg>
                                     </a>
                                     <a href="#" class="delete-btn" data-employee="{{ $employee->hoTen }}" data-id="{{ $employee->id }}">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="#currentcolor" class="bi bi-trash" viewBox="0 0 16 16">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="#0160B1" class="bi bi-trash" viewBox="0 0 16 16">
                                             <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
                                             <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z" />
                                         </svg>
@@ -402,30 +404,30 @@
     </div>
     <!-- Modal -->
     <div id="myModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="title-container">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-exclamation-triangle" viewBox="0 0 16 16">
-                        <path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.15.15 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.2.2 0 0 1-.054.06.1.1 0 0 1-.066.017H1.146a.1.1 0 0 1-.066-.017.2.2 0 0 1-.054-.06.18.18 0 0 1 .002-.183L7.884 2.073a.15.15 0 0 1 .054-.057m1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767z" />
-                        <path d="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z" />
-                    </svg>
-                    <h2 style="margin-left:10px">Xóa thông tin nhân viên</h2>
-                </div>
-                <span class="close">&times;</span>
+    <div class="modal-content">
+        <div class="modal-header">
+            <div class="title-container">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-exclamation-triangle" viewBox="0 0 16 16">
+                    <path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.15.15 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.2.2 0 0 1-.054.06.1.1 0 0 1-.066.017H1.146a.1.1 0 0 1-.066-.017.2.2 0 0 1-.054-.06.18.18 0 0 1 .002-.183L7.884 2.073a.15.15 0 0 1 .054-.057m1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767z" />
+                    <path d="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z" />
+                </svg>
+                <h2 style="margin-left:10px">Xóa thông tin nhân viên</h2>
             </div>
-            <div class="modal-body">
-                <p id="deleteMessage">Bạn có chắc chắn muốn xóa thông tin nhân viên không?</p>
-            </div>
-            <div class="modal-footer">
-                <form id="deleteForm" method="POST" action="{{ route('employees.destroy', $employee->id) }}">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="confirm" style="background: #D2D2D2; border: 1px solid #505050; color: #2A2A2A">Đồng ý</button>
-                    <button type="button" class="cancel" style="color: #2A2A2A">Hủy</button>
-                </form>
-            </div>
+            <span class="close">&times;</span>
+        </div>
+        <div class="modal-body">
+            <p id="deleteMessage">Bạn có chắc chắn muốn xóa thông tin nhân viên <span id="employeeName" style="color: red;"></span> không?</p>
+        </div>
+        <div class="modal-footer">
+            <form id="deleteForm" method="POST" action="">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="confirm" style="background: #297ABF; color: #ffffff">Đồng ý</button>
+                <button type="button" class="cancel" style="background: #D2D2D2; color: #ffffff; margin-left: 5px">Hủy</button>
+            </form>
         </div>
     </div>
+</div>
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
             const notification = document.getElementById('notification');
@@ -446,7 +448,7 @@
                     event.preventDefault();
                     var employeeName = this.getAttribute('data-employee');
                     var employeeId = this.getAttribute('data-id');
-                    document.getElementById('deleteMessage').textContent = `Bạn có chắc chắn muốn xóa thông tin nhân viên ${employeeName} không?`;
+                    document.getElementById('deleteMessage').innerHTML = `Bạn có chắc chắn muốn xóa thông tin nhân viên <span style="color: red;">${employeeName}</span> không?`;
                     document.getElementById('deleteForm').action = `/employees/${employeeId}`;
                     modal.style.display = "block";
                 });
@@ -491,19 +493,19 @@
                         <td>${employee.email}</td>
                         <td class="icon-links">
                             <a href="/employees/${employee.id}">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#009900" class="bi bi-eye" viewBox="0 0 16 16">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#0160B1" class="bi bi-eye" viewBox="0 0 16 16">
                                     <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z" />
                                     <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0" />
                                 </svg>
                             </a>
                             <a href="/employees/${employee.id}/edit">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="#330099" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="#0160B1" class="bi bi-pencil-square" viewBox="0 0 16 16">
                                     <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
                                     <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
                                 </svg>
                             </a>
                             <a href="#" class="delete-btn" data-employee="${employee.hoTen}" data-id="${employee.id}">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="#BB0000" class="bi bi-trash" viewBox="0 0 16 16">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="#0160B1" class="bi bi-trash" viewBox="0 0 16 16">
                                     <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
                                     <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z" />
                                 </svg>

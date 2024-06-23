@@ -20,7 +20,7 @@
         .sidebar {
             background-color: #484D51;
             color: #fff;
-            width: 200px;
+            width: 330px;;
             padding: 20px;
         }
 
@@ -53,8 +53,6 @@
             padding: 15px;
             background-color: #9EA5AB;
             display: flex;
-            justify-content: center;
-            align-items: center;
         }
 
         .content h1 {
@@ -123,8 +121,8 @@
         }
 
         .employee-detail-container {
-            width: 650px;
-            padding: 30px;
+            width: 100%;
+            padding: 40px;
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -132,7 +130,7 @@
         }
 
         .employee-detail-container h1 {
-            font-size: 24px;
+            font-size: 26px;
             margin-bottom: 20px;
             text-align: left;
             color: #333;
@@ -244,7 +242,7 @@
                 <div class="detail-item rating">
                     <strong>Đánh giá:</strong><span>{{ $employee->danhGia }}</span>
                 </div>
-                <a href="{{ route('employees.index') }}" class="btn-back" style="border: 1px solid #888888; margin-top: 20px;">Quay lại</a>
+                <a href="{{ route('employees.index') }}" class="btn-back" style="border: 1px solid #888888; margin-top: 130px;margin-left:90%">Quay lại</a>
             </div>
         </div>
     </div>

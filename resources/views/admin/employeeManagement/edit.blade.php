@@ -170,7 +170,7 @@
 
         .employee-form-container .form-buttons {
             display: flex;
-            justify-content: space-between;
+            justify-content: right;
         }
 
         .employee-form-container .form-buttons button {
@@ -215,9 +215,9 @@
         .notification {
             display: none;
             align-items: center;
-            background-color: #e6ffe6;
-            color: #4CAF50;
-            border: 1px solid #4CAF50;
+            background-color: #E0FFE2;
+            color: #0B8E00;
+            border: 1px solid #0B8E00;
             padding: 10px;
             border-radius: 5px;
             max-width: 298px;
@@ -353,8 +353,8 @@
                         @enderror
                     </div>
                     <div class="form-buttons">
-                        <button type="submit" class="btn-save">Lưu lại</button>
-                        <a href="{{ route('employees.index') }}" class="btn-back">Quay lại</a>
+                        <button type="submit" class="btn-save" style="width:100px">Lưu lại</button>
+                        <a href="{{ route('employees.index') }}" class="btn-back" style="margin-left:15px">Quay lại</a>
                     </div>
                 </form>
             </div>
